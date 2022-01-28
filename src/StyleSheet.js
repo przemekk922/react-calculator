@@ -40,10 +40,12 @@ export const Screen = styled.div`
 		rgba(21, 21, 23, 1) 100%
 	);
 	padding: 10px 15px 10px 15px;
-	color: whitesmoke;
+	color: gainsboro;
 	word-wrap: break-word;
 	word-break: break-all;
 	border: 15px solid lightgray;
+	font-family: "ZCOOL QingKe HuangYou";
+	letter-spacing: 5px;
 `;
 
 export const PreviousOperationScreen = styled.p`
@@ -89,13 +91,16 @@ export const Keyboard = styled.div`
 // 	};
 
 export const StyledKeyboardBtn = styled.button`
-	font-size: 2.5rem;
-	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 3.5rem;
+	font-family: "ZCOOL QingKe HuangYou";
 	font-weight: 200;
 	border: 1px solid silver;
 	color: darkslategray;
 	&:hover {
 		background-color: lightgray;
+	}
+	&:active {
+		box-shadow: inset 0px 0px 6px 2px rgba(134, 135, 148, 1);
 	}
 	&.StyledKeyboardBtn-equal {
 		border-radius: 0 0 1.5rem 0;
@@ -111,5 +116,9 @@ export const StyledKeyboardBtn = styled.button`
 	}
 	&.StyledKeyboardBtn-zero {
 		border-radius: 0 0 0 1.5rem;
+	}
+	&.StyledKeyboardBtn-multi {
+		font-weight: bolder;
+		font-size: 2.5rem;
 	}
 `;

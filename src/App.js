@@ -83,7 +83,7 @@ const Calculator = () => {
 				<Keyboard>
 					<KeyboardBtn value="&#43;" />
 					<KeyboardBtn value="&#8722;" />
-					<KeyboardBtn value="&#10005;" />
+					<KeyboardBtn value="&#10005;" className={"StyledKeyboardBtn-multi"} />
 					<KeyboardBtn value="&#247;" />
 					<KeyboardBtn value="7" />
 					<KeyboardBtn value="8" />

@@ -23,6 +23,14 @@ const Calculator = () => {
 			if (operation.includes(".")) {
 				return;
 			}
+			if (operation === "") {
+				setOperation((operation = "0"));
+			}
+		}
+		if (value === "0") {
+			if (operation.substring(0) === "0") {
+				return;
+			}
 		}
 		setOperation(operation + value);
 	};
@@ -57,7 +65,7 @@ const Calculator = () => {
 	const operatorClickHandler = (value) => {
 		if (result.includes("+")) {
 			equalsClickHandler(value);
-			console.log(result);
+			setResult(result);
 		}
 		if (operation === "") {
 			operation = 0;

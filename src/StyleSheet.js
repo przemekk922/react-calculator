@@ -14,10 +14,12 @@ export const ReactCalculator = styled.div`
 `;
 
 export const Title = styled.h1`
-	font-size: 3.5em;
+	padding-bottom: 30px;
 	text-align: center;
+	font-family: "ZCOOL QingKe HuangYou";
+	font-size: 4.5em;
+	letter-spacing: 6px;
 	color: rgba(255, 140, 99, 0.8);
-	padding-bottom: 50px;
 `;
 export const Wrapper = styled.div`
 	width: 650px;
@@ -66,29 +68,6 @@ export const Keyboard = styled.div`
 	grid-template-rows: repeat(5, 20%);
 	height: 75%;
 `;
-// export const KeyboardBtn = ({ value, children, onClick, className }) => {
-// 		return (
-// 			<StyledKeyboardBtn
-// 				className={className}
-// 				value={value}
-// 				onClick={() => {
-// 					value === "+" || value === "−" || value === "✕" || value === "÷"
-// 						? operatorClickHandler(value)
-// 						: value === "⌫"
-// 						? backspaceClickHandler()
-// 						: value === "="
-// 						? equalsClickHandler(value)
-// 						: value === "CE"
-// 						? clearEntryClickHandler()
-// 						: value === "AC"
-// 						? allClearClickHandler()
-// 						: numberClickHandler(value);
-// 				}}
-// 			>
-// 				{value}
-// 			</StyledKeyboardBtn>
-// 		);
-// 	};
 
 export const StyledKeyboardBtn = styled.button`
 	font-size: 3.5rem;

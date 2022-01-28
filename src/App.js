@@ -16,11 +16,19 @@ const Calculator = () => {
 	let [result, setResult] = useState("");
 
 	const numberClickHandler = (value) => {
+		if (operation.length > 15) {
+			return;
+		}
+		if (value === ".") {
+			if (operation.includes(".")) {
+				return;
+			}
+		}
 		setOperation(operation + value);
 	};
 
 	const backspaceClickHandler = () => {
-		setOperation(operation.substring(0, operation.length - 1));
+		setOperation(operation.toString().slice(0, -1));
 	};
 
 	const clearEntryClickHandler = () => {
@@ -32,12 +40,10 @@ const Calculator = () => {
 		setResult((result = ""));
 	};
 
-	const operatorClickHandler = (value) => {
-		setResult((result = operation + " " + value));
-		setOperation((operation = ""));
-	};
-
 	const equalsClickHandler = (value) => {
+		if (operation === "") {
+			return;
+		}
 		setResult((result = result + " " + operation + " " + value));
 		result.includes("+")
 			? setOperation(parseFloat(result) + parseFloat(operation))
@@ -46,6 +52,19 @@ const Calculator = () => {
 			: result.includes("✕")
 			? setOperation(parseFloat(result) * parseFloat(operation))
 			: setOperation(parseFloat(result) / parseFloat(operation));
+	};
+
+	const operatorClickHandler = (value) => {
+		if (result.includes("+")) {
+			equalsClickHandler(value);
+			console.log(result);
+		}
+		if (operation === "") {
+			operation = 0;
+		}
+
+		setResult((result = operation + " " + value));
+		setOperation((operation = ""));
 	};
 
 	const KeyboardBtn = ({ value, children, onClick, className }) => {

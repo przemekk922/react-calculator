@@ -7,7 +7,6 @@ import {
 	PreviousOperationScreen,
 	CurrentOperationScreen,
 	Keyboard,
-	KeyboardBtn,
 	StyledKeyboardBtn,
 } from "./StyleSheet.js";
 

@@ -7,7 +7,6 @@ import {
 	PreviousOperationScreen,
 	CurrentOperationScreen,
 	Keyboard,
-	KeyboardBtn,
 	StyledKeyboardBtn,
 } from "./StyleSheet.js";
 
@@ -75,23 +74,34 @@ const Calculator = () => {
 		setOperation((operation = ""));
 	};
 
-	const KeyboardBtn = ({ value, children, onClick, className }) => {
+	const KeyboardBtn = ({ value, className }) => {
 		return (
 			<StyledKeyboardBtn
 				className={className}
 				value={value}
 				onClick={() => {
-					value === "+" || value === "−" || value === "✕" || value === "÷"
-						? operatorClickHandler(value)
-						: value === "⌫"
-						? backspaceClickHandler()
-						: value === "="
-						? equalsClickHandler(value)
-						: value === "CE"
-						? clearEntryClickHandler()
-						: value === "AC"
-						? allClearClickHandler()
-						: numberClickHandler(value);
+					switch (value) {
+						case "+":
+						case "−":
+						case "✕":
+						case "÷":
+							operatorClickHandler(value);
+							break;
+						case "⌫":
+							backspaceClickHandler();
+							break;
+						case "=":
+							equalsClickHandler(value);
+							break;
+						case "CE":
+							clearEntryClickHandler();
+							break;
+						case "AC":
+							allClearClickHandler();
+							break;
+						default:
+							numberClickHandler(value);
+					}
 				}}
 			>
 				{value}
